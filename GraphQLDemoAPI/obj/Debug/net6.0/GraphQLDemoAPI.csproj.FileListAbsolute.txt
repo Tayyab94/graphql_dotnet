@@ -50,3 +50,4 @@ C:\Users\tayya\Desktop\GraphQLDemo\GraphQLDemoAPI\obj\Debug\net6.0\refint\GraphQ
 C:\Users\tayya\Desktop\GraphQLDemo\GraphQLDemoAPI\obj\Debug\net6.0\GraphQLDemoAPI.pdb
 C:\Users\tayya\Desktop\GraphQLDemo\GraphQLDemoAPI\obj\Debug\net6.0\GraphQLDemoAPI.genruntimeconfig.cache
 C:\Users\tayya\Desktop\GraphQLDemo\GraphQLDemoAPI\obj\Debug\net6.0\ref\GraphQLDemoAPI.dll
+C:\Users\tayya\Desktop\GraphQLDemo\GraphQLDemoAPI\bin\Debug\net6.0\Bogus.dll

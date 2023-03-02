@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1Io2ZK17NjnRjPld+6W+SN1eAlFwl6BYGV7te4KXVzzjfD3lPmyeOPxzVMe4Qkro0qGzw0yyW7VgySQ4ZtK7gw==",
+  "dgSpecHash": "k91ttIVp5ggO6qqxOGwAIaiIMiQlIK5pEr2GJz2GXxQWcjUhtlrTRbfGB0+1NptfJ0QB/AZE674GnV4tm8w1Xw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tayya\\Desktop\\GraphQLDemo\\GraphQLDemoAPI\\GraphQLDemoAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tayya\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\tayya\\.nuget\\packages\\greendonut\\13.0.5\\greendonut.13.0.5.nupkg.sha512",
     "C:\\Users\\tayya\\.nuget\\packages\\hotchocolate\\13.0.5\\hotchocolate.13.0.5.nupkg.sha512",
     "C:\\Users\\tayya\\.nuget\\packages\\hotchocolate.abstractions\\13.0.5\\hotchocolate.abstractions.13.0.5.nupkg.sha512",
