@@ -33,24 +33,9 @@ namespace GraphQLDemoAPI.Schema
         // Install Bugus package 
         public async Task<IEnumerable<CourseType>> GetCoursesAsync()
         {
-
             await Task.Delay(1000);
 
             return _courseFaker.Generate(2);
-
-            //return new List<CourseType>
-            //{
-            //    new CourseType()
-            //    {
-            //        Id= Guid.NewGuid(),
-            //        Name="Geometry",
-            //        Subject= Subjects.Mathematics,
-            //        Instructor= new InstructorType()
-            //        {
-            //            Id=Guid.NewGuid()
-            //        }
-            //    }
-            //};
         }
 
 
