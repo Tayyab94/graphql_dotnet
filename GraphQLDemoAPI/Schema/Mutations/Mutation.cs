@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GraphQLDemoAPI.Schema.Subscriptions;
+using HotChocolate.Subscriptions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace GraphQLDemoAPI.Schema.Mutations
 {
@@ -12,7 +14,6 @@ namespace GraphQLDemoAPI.Schema.Mutations
         }
 
         public CourseResult CreateCourse(string name, Subjects subject, Guid InstructorId) {
-
             CourseResult courseResult = new CourseResult()
             {
                 Name = name,
@@ -20,15 +21,13 @@ namespace GraphQLDemoAPI.Schema.Mutations
                 InstructorId = InstructorId,
                 Id = Guid.NewGuid(),
             };
-        
-
             _courseResults.Add(courseResult);
             return courseResult;
         }
 
 
 
-        public CourseResult CreateNewCourse(CourseInputType course)
+        public async  Task<CourseResult> CreateNewCourse(CourseInputType course, [Service] ITopicEventSender topicEventSender)
         {
 
             CourseResult courseResult = new CourseResult()
@@ -39,12 +38,13 @@ namespace GraphQLDemoAPI.Schema.Mutations
                 Id = Guid.NewGuid(),
             };
 
-
             _courseResults.Add(courseResult);
+            //await topicEventSender.SendAsync(nameof(subscription.CourseCreated),course);
+            await topicEventSender.SendAsync("ExampleTopic", courseResult);
             return courseResult;
         }
 
-        public CourseResult UpdateCourse(Guid id, CourseInputType course) { 
+        public async Task<CourseResult> UpdateCourse(Guid id, CourseInputType course, [Service] ITopicEventSender topicEventSender) { 
         
             var data =_courseResults.FirstOrDefault(s=>s.Id == id);
 
@@ -57,6 +57,9 @@ namespace GraphQLDemoAPI.Schema.Mutations
             data.Subject =course.subject;
             data.InstructorId =course.InstructorId;
 
+            string updateCoursTopic = $"{data.Id}_{nameof(subscription.CourseUpdate)}";
+
+            await topicEventSender.SendAsync(updateCoursTopic, data);
             return data;
         }
 
