@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using GraphQLDemoAPI.Models;
 
 namespace GraphQLDemoAPI.Schema
 {

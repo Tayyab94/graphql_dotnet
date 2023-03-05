@@ -1,4 +1,5 @@
-﻿using GraphQLDemoAPI.Schema.Subscriptions;
+﻿using GraphQLDemoAPI.Models;
+using GraphQLDemoAPI.Schema.Subscriptions;
 using HotChocolate.Subscriptions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -57,9 +58,9 @@ namespace GraphQLDemoAPI.Schema.Mutations
             data.Subject =course.subject;
             data.InstructorId =course.InstructorId;
 
-            string updateCoursTopic = $"{data.Id}_{nameof(subscription.CourseUpdate)}";
+            //string updateCoursTopic = $"{data.Id}_{nameof(subscription.CourseUpdate)}";
 
-            await topicEventSender.SendAsync(updateCoursTopic, data);
+            //await topicEventSender.SendAsync(updateCoursTopic, data);
             return data;
         }
 

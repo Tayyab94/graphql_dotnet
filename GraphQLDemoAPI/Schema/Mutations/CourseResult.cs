@@ -1,4 +1,6 @@
-﻿namespace GraphQLDemoAPI.Schema.Mutations
+﻿using GraphQLDemoAPI.Models;
+
+namespace GraphQLDemoAPI.Schema.Mutations
 {
     public class CourseResult
     {
